@@ -115,6 +115,7 @@ export const InstanceTree = (
     (instanceSelector: InstanceSelector) => {
       const [instanceId, parentId] = instanceSelector;
       let instance = instances.get(instanceId);
+
       const children: Instance[] = [];
 
       // put fake collection item instances according to collection data
@@ -122,6 +123,7 @@ export const InstanceTree = (
         const data = propValues
           .get(JSON.stringify(instanceSelector))
           ?.get("data");
+
         // create items only when collection has content
         if (Array.isArray(data) && instance.children.length > 0) {
           data.forEach((_item, index) => {

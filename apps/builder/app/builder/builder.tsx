@@ -381,6 +381,7 @@ export const Builder = ({
   const isCloneDialogOpen = useStore($isCloneDialogOpen);
   const isPreviewMode = useStore($isPreviewMode);
   const { onRef: onRefReadCanvas, onTransitionEnd } = useReadCanvasRect();
+
   // We need to initialize this in both canvas and builder,
   // because the events will fire in either one, depending on where the focus is
   useCopyPaste();
